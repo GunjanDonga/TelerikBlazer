@@ -39,24 +39,27 @@ public class DriverManager {
                 cOptions.setExperimentalOption("prefs", prefs);
                 cOptions.addArguments("--incognito");
 
-                //added below 5 lines later
-                cOptions.addArguments("--disable-dev-shm-usage");  // Helps in Docker containers
-                cOptions.addArguments("--no-sandbox");  // Helps in CI/CD environments
-                cOptions.addArguments("--remote-allow-origins=*");
-                String uniqueUserDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
-                cOptions.addArguments("--user-data-dir=" + uniqueUserDataDir);
-
-
                 //Now Pass ChromeOptions instance to ChromeDriver Constructor to initialize chrome driver which will switch off this browser notification on the chrome browser
                 driver = new ChromeDriver(cOptions);
             }
             case "chrome-headless" -> {
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("headless");
-                chromeOptions.addArguments("window-size=1920x1080");
-                //chromeOptions.addArguments("window-size=1440x900");
-                chromeOptions.addArguments("--proxy-server='direct://'");
-                chromeOptions.addArguments("--proxy-bypass-list=*");
+//                chromeOptions.addArguments("headless");
+//                chromeOptions.addArguments("window-size=1920x1080");
+//                //chromeOptions.addArguments("window-size=1440x900");
+//                chromeOptions.addArguments("--proxy-server='direct://'");
+//                chromeOptions.addArguments("--proxy-bypass-list=*");
+
+                //added for github
+                chromeOptions.addArguments("--headless=new");  // Use the latest headless mode
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--window-size=1920,1080");
+                chromeOptions.addArguments("--disable-extensions");
+                chromeOptions.addArguments("--disable-popup-blocking");
+
                 driver = new ChromeDriver(chromeOptions);
             }
             case "ie" -> {
