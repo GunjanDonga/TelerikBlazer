@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests" thread-count="2">
+<suite name="All Test Suite" parallel="tests" thread-count="1">
 
 <!--    <test name="ChromeTests">-->
 <!--        <parameter name="browser" value="chrome"/>-->
@@ -25,44 +25,44 @@
 <!--    </test>-->
 
 
-        <parameter name="browser" value="chrome-headless"/>
-        <test verbose="2" name="C:/Users/gunjan/IdeaProjects/TelerikBlazer">
-            <classes>
-                <class name="card.CardTest">
-                    <methods>
-                        <include name="verifyCardLikeIncreasedAndDecreasedWhenClickOnLikeIconRespectively"/>
-                        <include name="verifySharePopupIsDisplayWhenClickOnShareIcon"/>
-                        <include name="verifyThatCommentPostedSuccessfully"/>
-                        <include name="verifyLikeOfCommentIncreasedAndDecreasedWhenClickOnLikeIconRespectively"/>
-                    </methods>
-                </class>
-                <class name="grid.GridTest">
-                    <methods>
-                        <include name="verifyThatTheUserIsAbleToChangeTheThemeSuccessfully"/>
-                        <include name="verifyThatProductIsAddedSuccessfully"/>
-                        <include name="verifyThatErrorMessageDisplayedWhenProductNameFieldEmpty"/>
-                        <include name="verifyThatDroppedColumnDataAreGroupedByValue"/>
-                        <include name="verifyThatProductDataEditedSuccessfully"/>
-                        <include name="verifyThatProductIsSuccessfullyDeleted"/>
-                        <include name="verifyProductNameColumnDataIsNotEqualToGivenName"/>
-                        <include name="verifyProductNameColumnDataContainsAndEndsWithGivenName"/>
-                        <include name="verifyProductNameColumnDataDoesNotContainsGivenName"/>
-                        <include name="verifyProductNameColumnDataIsEqualToGivenName"/>
-                        <include name="verifyCostColumnDataIsNotEqualToGivenCost"/>
-                        <include name="verifyCostColumnDataIsLessThanOrEqualToGivenCost"/>
-                        <include name="verifyCostColumnDataIsGreaterThanAndLessThanGivenCost"/>
-                        <include name="verifyTheStatusOfDiscontinuedColumnIsDiscontinued"/>
-                        <include name="verifyTheStatusOfDiscontinuedColumnIsAvailable"/>
-                        <include name="verifyCategoryColumnDataIsAsPerSelectedCheckboxes"/>
-                        <include name="verifyInStockColumnDataIsGreaterThanAndLessThanOrEqualToGivenStockData"/>
-                        <include name="verifyInStockColumnDataIsEqualToGivenStockData"/>
-                        <include name="verifyQuantityPerUnitColumnDataIsEqualToGivenQuantity"/>
-                        <include name="verifyCostColumnSortingInAscendingDescendingOrder"/>
-                        <include name="verifyCategoryColumnSortingInAscendingOrder"/>
-                        <include name="verifyInStockColumnSortingInAscendingOrder"/>
-                        <include name="verifyQuantityPerUnitColumnSortingInAscendingOrder"/>
-                    </methods>
-                </class>
-            </classes>
-        </test>
+    <parameter name="browser" value="chrome-headless"/>
+    <test verbose="2" name="C:/Users/gunjan/IdeaProjects/TelerikBlazer">
+        <classes>
+            <class name="card.CardTest">
+                <methods>
+                    <include name="verifyCardLikeIncreasedAndDecreasedWhenClickOnLikeIconRespectively"/>
+                    <include name="verifySharePopupIsDisplayWhenClickOnShareIcon"/>
+                    <include name="verifyThatCommentPostedSuccessfully"/>
+                    <include name="verifyLikeOfCommentIncreasedAndDecreasedWhenClickOnLikeIconRespectively"/>
+                </methods>
+            </class>
+            <class name="grid.GridTest">
+                <methods>
+                    <include name="verifyThatTheUserIsAbleToChangeTheThemeSuccessfully"/>
+                    <include name="verifyThatProductIsAddedSuccessfully"/>
+                    <include name="verifyThatErrorMessageDisplayedWhenProductNameFieldEmpty"/>
+                    <include name="verifyThatDroppedColumnDataAreGroupedByValue"/>
+                    <include name="verifyThatProductDataEditedSuccessfully"/>
+                    <include name="verifyThatProductIsSuccessfullyDeleted"/>
+                    <include name="verifyProductNameColumnDataIsNotEqualToGivenName"/>
+                    <include name="verifyProductNameColumnDataContainsAndEndsWithGivenName"/>
+                    <include name="verifyProductNameColumnDataDoesNotContainsGivenName"/>
+                    <include name="verifyProductNameColumnDataIsEqualToGivenName"/>
+                    <include name="verifyCostColumnDataIsNotEqualToGivenCost"/>
+                    <include name="verifyCostColumnDataIsLessThanOrEqualToGivenCost"/>
+                    <include name="verifyCostColumnDataIsGreaterThanAndLessThanGivenCost"/>
+                    <include name="verifyTheStatusOfDiscontinuedColumnIsDiscontinued"/>
+                    <include name="verifyTheStatusOfDiscontinuedColumnIsAvailable"/>
+                    <include name="verifyCategoryColumnDataIsAsPerSelectedCheckboxes"/>
+                    <include name="verifyInStockColumnDataIsGreaterThanAndLessThanOrEqualToGivenStockData"/>
+                    <include name="verifyInStockColumnDataIsEqualToGivenStockData"/>
+                    <include name="verifyQuantityPerUnitColumnDataIsEqualToGivenQuantity"/>
+                    <include name="verifyCostColumnSortingInAscendingDescendingOrder"/>
+                    <include name="verifyCategoryColumnSortingInAscendingOrder"/>
+                    <include name="verifyInStockColumnSortingInAscendingOrder"/>
+                    <include name="verifyQuantityPerUnitColumnSortingInAscendingOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
