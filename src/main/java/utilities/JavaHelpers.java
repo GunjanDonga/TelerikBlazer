@@ -389,15 +389,15 @@ public class JavaHelpers {
         return list.get(randomIndex);
     }
 
-    public void deleteScreenshots() {
-        String screenshotsFolder = Constants.SCREENSHOT_LOCATION;
-        // Delete all files in the screenshots folder
-        File[] files = new File(screenshotsFolder).listFiles();
-        assert files != null;
-        for (File file : files) {
-            file.delete();
-        }
-    }
+//    public void deleteScreenshots() {
+//        String screenshotsFolder = Constants.SCREENSHOT_LOCATION;
+//        // Delete all files in the screenshots folder
+//        File[] files = new File(screenshotsFolder).listFiles();
+//        assert files != null;
+//        for (File file : files) {
+//            file.delete();
+//        }
+//    }
 
     /**
      * Get Number From Month Name
