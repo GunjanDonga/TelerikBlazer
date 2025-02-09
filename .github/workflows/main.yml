@@ -1,4 +1,4 @@
-name: Selenium Java TestNG Pipeline
+name: Run Selenium Java TestNG Tests
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Cache Maven Packages
+      - name: Cache Maven Dependencies
         uses: actions/cache@v3
         with:
           path: ~/.m2
