@@ -30,6 +30,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Install Chrome  # 🔹 Add this step to install Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+          google-chrome --version  # Verify Chrome installation
+
       - name: Install Dependencies
         run: mvn clean install -DskipTests
 
