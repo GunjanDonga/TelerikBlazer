@@ -60,6 +60,10 @@ public class DriverManager {
                 chromeOptions.addArguments("--disable-extensions");
                 chromeOptions.addArguments("--disable-popup-blocking");
 
+                // Set unique user-data-dir for each session
+                String uniqueUserDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
+                chromeOptions.addArguments("--user-data-dir=" + uniqueUserDataDir);
+
                 driver = new ChromeDriver(chromeOptions);
             }
             case "ie" -> {
