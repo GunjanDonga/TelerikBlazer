@@ -39,6 +39,9 @@ public class DriverManager {
                 cOptions.setExperimentalOption("prefs", prefs);
                 cOptions.addArguments("--incognito");
 
+                String uniqueUserDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
+                cOptions.addArguments("--user-data-dir=" + uniqueUserDataDir);
+
                 //Now Pass ChromeOptions instance to ChromeDriver Constructor to initialize chrome driver which will switch off this browser notification on the chrome browser
                 driver = new ChromeDriver(cOptions);
             }
@@ -59,8 +62,6 @@ public class DriverManager {
                 chromeOptions.addArguments("--window-size=1920,1080");
                 chromeOptions.addArguments("--disable-extensions");
                 chromeOptions.addArguments("--disable-popup-blocking");
-
-                // Set unique user-data-dir for each session
                 String uniqueUserDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
                 chromeOptions.addArguments("--user-data-dir=" + uniqueUserDataDir);
 
