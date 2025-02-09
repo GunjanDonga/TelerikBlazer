@@ -11,10 +11,10 @@ public class BaseTest {
     private DriverManager drivermanager;
     JavaHelpers javaHelpers = new JavaHelpers();
 
-    @BeforeSuite
-    public void deleteScreenshot(){
-        javaHelpers.deleteScreenshots();
-    }
+//    @BeforeSuite
+//    public void deleteScreenshot(){
+//        javaHelpers.deleteScreenshots();
+//    }
 
     @BeforeMethod
     @Parameters({"browser"})
