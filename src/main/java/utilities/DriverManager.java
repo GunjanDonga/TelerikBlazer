@@ -38,6 +38,15 @@ public class DriverManager {
                 // set ExperimentalOption - prefs
                 cOptions.setExperimentalOption("prefs", prefs);
                 cOptions.addArguments("--incognito");
+
+                //added below 5 lines later
+                cOptions.addArguments("--disable-dev-shm-usage");  // Helps in Docker containers
+                cOptions.addArguments("--no-sandbox");  // Helps in CI/CD environments
+                cOptions.addArguments("--remote-allow-origins=*");
+                String uniqueUserDataDir = "/tmp/chrome-user-data-" + System.currentTimeMillis();
+                cOptions.addArguments("--user-data-dir=" + uniqueUserDataDir);
+
+
                 //Now Pass ChromeOptions instance to ChromeDriver Constructor to initialize chrome driver which will switch off this browser notification on the chrome browser
                 driver = new ChromeDriver(cOptions);
             }
