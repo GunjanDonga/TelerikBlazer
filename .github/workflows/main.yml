@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up JDK 21  # 🔹 Ensure Java 21 is installed
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           java-version: '21'
@@ -30,11 +30,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install Chrome  # 🔹 Add this step to install Chrome
+      - name: Install Chrome
         run: |
           sudo apt update
           sudo apt install -y google-chrome-stable
           google-chrome --version  # Verify Chrome installation
+
+      - name: Kill existing Chrome instances (if any)
+        run: pkill -f chrome || true  # 🔹 Prevent conflicts
 
       - name: Install Dependencies
         run: mvn clean install -DskipTests
